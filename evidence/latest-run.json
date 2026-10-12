@@ -1,6 +1,5 @@
 {
-  "generatedAt": "2026-10-12T06:24:17.688Z",
-  "baseUrl": "http://127.0.0.1:53383",
+  "generatedAt": "2026-10-12T06:31:48.798Z",
   "scenarioCount": 9,
   "results": [
     {
@@ -26,13 +25,13 @@
       "networkRequests": [
         {
           "method": "GET",
-          "url": "http://127.0.0.1:53383/api/search?mode=happy&q=browser"
+          "url": "/api/search?mode=happy&q=browser"
         }
       ],
       "networkResponses": [
         {
           "status": 200,
-          "url": "http://127.0.0.1:53383/api/search?mode=happy&q=browser",
+          "url": "/api/search?mode=happy&q=browser",
           "headers": {
             "content-type": "application/json; charset=utf-8",
             "retry-after": null,
@@ -111,13 +110,13 @@
       "networkRequests": [
         {
           "method": "GET",
-          "url": "http://127.0.0.1:53383/api/search?mode=transport-timeout&q=browser"
+          "url": "/api/search?mode=transport-timeout&q=browser"
         }
       ],
       "networkResponses": [],
       "requestFailures": [
         {
-          "url": "http://127.0.0.1:53383/api/search?mode=transport-timeout&q=browser",
+          "url": "/api/search?mode=transport-timeout&q=browser",
           "errorText": "net::ERR_ABORTED"
         }
       ],
@@ -160,13 +159,13 @@
       "networkRequests": [
         {
           "method": "GET",
-          "url": "http://127.0.0.1:53383/api/search?mode=http-server-error&q=browser"
+          "url": "/api/search?mode=http-server-error&q=browser"
         }
       ],
       "networkResponses": [
         {
           "status": 503,
-          "url": "http://127.0.0.1:53383/api/search?mode=http-server-error&q=browser",
+          "url": "/api/search?mode=http-server-error&q=browser",
           "headers": {
             "content-type": "application/json; charset=utf-8",
             "retry-after": null,
@@ -216,13 +215,13 @@
       "networkRequests": [
         {
           "method": "GET",
-          "url": "http://127.0.0.1:53383/api/search?mode=http-rate-limit&q=browser"
+          "url": "/api/search?mode=http-rate-limit&q=browser"
         }
       ],
       "networkResponses": [
         {
           "status": 429,
-          "url": "http://127.0.0.1:53383/api/search?mode=http-rate-limit&q=browser",
+          "url": "/api/search?mode=http-rate-limit&q=browser",
           "headers": {
             "content-type": "application/json; charset=utf-8",
             "retry-after": "3",
@@ -272,13 +271,13 @@
       "networkRequests": [
         {
           "method": "GET",
-          "url": "http://127.0.0.1:53383/api/search?mode=access-challenge&q=browser"
+          "url": "/api/search?mode=access-challenge&q=browser"
         }
       ],
       "networkResponses": [
         {
           "status": 200,
-          "url": "http://127.0.0.1:53383/api/search?mode=access-challenge&q=browser",
+          "url": "/api/search?mode=access-challenge&q=browser",
           "headers": {
             "content-type": "application/json; charset=utf-8",
             "retry-after": null,
@@ -326,13 +325,13 @@
       "networkRequests": [
         {
           "method": "GET",
-          "url": "http://127.0.0.1:53383/api/search?mode=render-crash&q=browser"
+          "url": "/api/search?mode=render-crash&q=browser"
         }
       ],
       "networkResponses": [
         {
           "status": 200,
-          "url": "http://127.0.0.1:53383/api/search?mode=render-crash&q=browser",
+          "url": "/api/search?mode=render-crash&q=browser",
           "headers": {
             "content-type": "application/json; charset=utf-8",
             "retry-after": null,
@@ -382,13 +381,13 @@
       "networkRequests": [
         {
           "method": "GET",
-          "url": "http://127.0.0.1:53383/api/search?mode=semantic-empty&q=browser"
+          "url": "/api/search?mode=semantic-empty&q=browser"
         }
       ],
       "networkResponses": [
         {
           "status": 200,
-          "url": "http://127.0.0.1:53383/api/search?mode=semantic-empty&q=browser",
+          "url": "/api/search?mode=semantic-empty&q=browser",
           "headers": {
             "content-type": "application/json; charset=utf-8",
             "retry-after": null,
@@ -436,13 +435,13 @@
       "networkRequests": [
         {
           "method": "GET",
-          "url": "http://127.0.0.1:53383/api/search?mode=stale-state&q=browser"
+          "url": "/api/search?mode=stale-state&q=browser"
         }
       ],
       "networkResponses": [
         {
           "status": 200,
-          "url": "http://127.0.0.1:53383/api/search?mode=stale-state&q=browser",
+          "url": "/api/search?mode=stale-state&q=browser",
           "headers": {
             "content-type": "application/json; charset=utf-8",
             "retry-after": null,

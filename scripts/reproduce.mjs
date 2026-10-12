@@ -25,6 +25,11 @@ function relevantHeaders(headers) {
   };
 }
 
+function normalizeRequestUrl(value) {
+  const parsed = new URL(value);
+  return `${parsed.pathname}${parsed.search}`;
+}
+
 async function runScenario(browser, baseUrl, scenario, options) {
   const context = await browser.newContext({
     viewport: { width: 1280, height: 720 },
@@ -41,21 +46,21 @@ async function runScenario(browser, baseUrl, scenario, options) {
 
   page.on('request', (request) => {
     if (new URL(request.url()).pathname === '/api/search') {
-      networkRequests.push({ method: request.method(), url: request.url() });
+      networkRequests.push({ method: request.method(), url: normalizeRequestUrl(request.url()) });
     }
   });
   page.on('response', (response) => {
     if (new URL(response.url()).pathname === '/api/search') {
       networkResponses.push({
         status: response.status(),
-        url: response.url(),
+        url: normalizeRequestUrl(response.url()),
         headers: relevantHeaders(response.headers()),
       });
     }
   });
   page.on('requestfailed', (request) => {
     if (new URL(request.url()).pathname === '/api/search') {
-      requestFailures.push({ url: request.url(), errorText: request.failure()?.errorText || 'unknown' });
+      requestFailures.push({ url: normalizeRequestUrl(request.url()), errorText: request.failure()?.errorText || 'unknown' });
     }
   });
   page.on('console', (message) => {
@@ -122,7 +127,6 @@ export async function runReproduction({ scenarioId = null, writeEvidence = true,
     }
     const output = {
       generatedAt: new Date().toISOString(),
-      baseUrl,
       scenarioCount: results.length,
       results,
     };
