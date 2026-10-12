@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Browser retrieval evidence",
+  "type": "object",
+  "required": ["scenario", "requestAttempted", "httpStatus", "category", "nextAction"],
+  "properties": {
+    "scenario": { "type": "string" },
+    "requestAttempted": { "type": "boolean" },
+    "requestUrl": { "type": ["string", "null"] },
+    "transportError": { "type": ["string", "null"] },
+    "httpStatus": { "type": ["integer", "null"] },
+    "responseHeaders": { "type": "object" },
+    "challengeMarker": { "type": "boolean" },
+    "staleState": { "type": "boolean" },
+    "semanticMismatch": { "type": "boolean" },
+    "resultCount": { "type": ["integer", "null"] },
+    "uiUpdated": { "type": "boolean" },
+    "category": { "type": "string", "enum": ["OK", "F01", "F02", "F03", "F04", "F05", "F06", "F07", "F08"] },
+    "nextAction": { "type": "string" }
+  }
+}

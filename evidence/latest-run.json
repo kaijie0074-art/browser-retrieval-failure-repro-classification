@@ -1,0 +1,471 @@
+{
+  "generatedAt": "2026-10-12T06:24:17.688Z",
+  "baseUrl": "http://127.0.0.1:53383",
+  "scenarioCount": 9,
+  "results": [
+    {
+      "scenario": "happy-path",
+      "mode": "happy",
+      "query": "browser",
+      "requestAttempted": true,
+      "requestUrl": "/api/search?mode=happy&q=browser",
+      "transportError": null,
+      "httpStatus": 200,
+      "responseHeaders": {
+        "content-type": "application/json; charset=utf-8",
+        "retry-after": null,
+        "x-search-challenge": null
+      },
+      "challengeMarker": false,
+      "staleState": false,
+      "semanticMismatch": false,
+      "resultCount": 2,
+      "uiUpdated": true,
+      "networkRequestCount": 1,
+      "networkResponseCount": 1,
+      "networkRequests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:53383/api/search?mode=happy&q=browser"
+        }
+      ],
+      "networkResponses": [
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:53383/api/search?mode=happy&q=browser",
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "retry-after": null,
+            "x-search-challenge": null
+          }
+        }
+      ],
+      "requestFailures": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "browser": {
+        "name": "chromium",
+        "version": "156.0.8078.4",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "locale": "en-US",
+        "timezoneId": "UTC"
+      },
+      "category": "OK",
+      "reason": "链路和结果语义均通过基线检查",
+      "nextAction": "NONE"
+    },
+    {
+      "scenario": "ui-no-request",
+      "mode": "ui-no-request",
+      "query": "browser",
+      "requestAttempted": false,
+      "requestUrl": null,
+      "transportError": null,
+      "httpStatus": null,
+      "responseHeaders": {},
+      "challengeMarker": false,
+      "staleState": false,
+      "semanticMismatch": false,
+      "resultCount": null,
+      "uiUpdated": true,
+      "networkRequestCount": 0,
+      "networkResponseCount": 0,
+      "networkRequests": [],
+      "networkResponses": [],
+      "requestFailures": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "browser": {
+        "name": "chromium",
+        "version": "156.0.8078.4",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "locale": "en-US",
+        "timezoneId": "UTC"
+      },
+      "category": "F01",
+      "reason": "操作发生但没有产生检索请求",
+      "nextAction": "VERIFY_UI_EVENT_CHAIN"
+    },
+    {
+      "scenario": "transport-timeout",
+      "mode": "transport-timeout",
+      "query": "browser",
+      "requestAttempted": true,
+      "requestUrl": "/api/search?mode=transport-timeout&q=browser",
+      "transportError": "timeout",
+      "httpStatus": null,
+      "responseHeaders": {},
+      "challengeMarker": false,
+      "staleState": false,
+      "semanticMismatch": false,
+      "resultCount": null,
+      "uiUpdated": true,
+      "networkRequestCount": 1,
+      "networkResponseCount": 0,
+      "networkRequests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:53383/api/search?mode=transport-timeout&q=browser"
+        }
+      ],
+      "networkResponses": [],
+      "requestFailures": [
+        {
+          "url": "http://127.0.0.1:53383/api/search?mode=transport-timeout&q=browser",
+          "errorText": "net::ERR_ABORTED"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "browser": {
+        "name": "chromium",
+        "version": "156.0.8078.4",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "locale": "en-US",
+        "timezoneId": "UTC"
+      },
+      "category": "F02",
+      "reason": "请求产生但没有拿到可用 HTTP 响应",
+      "nextAction": "CHECK_NETWORK_TRANSPORT"
+    },
+    {
+      "scenario": "http-server-error",
+      "mode": "http-server-error",
+      "query": "browser",
+      "requestAttempted": true,
+      "requestUrl": "/api/search?mode=http-server-error&q=browser",
+      "transportError": null,
+      "httpStatus": 503,
+      "responseHeaders": {
+        "content-type": "application/json; charset=utf-8",
+        "retry-after": null,
+        "x-search-challenge": null
+      },
+      "challengeMarker": false,
+      "staleState": false,
+      "semanticMismatch": false,
+      "resultCount": null,
+      "uiUpdated": true,
+      "networkRequestCount": 1,
+      "networkResponseCount": 1,
+      "networkRequests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:53383/api/search?mode=http-server-error&q=browser"
+        }
+      ],
+      "networkResponses": [
+        {
+          "status": 503,
+          "url": "http://127.0.0.1:53383/api/search?mode=http-server-error&q=browser",
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "retry-after": null,
+            "x-search-challenge": null
+          }
+        }
+      ],
+      "requestFailures": [],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+      ],
+      "pageErrors": [],
+      "browser": {
+        "name": "chromium",
+        "version": "156.0.8078.4",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "locale": "en-US",
+        "timezoneId": "UTC"
+      },
+      "category": "F03",
+      "reason": "响应状态码不是成功状态且没有访问策略信号",
+      "nextAction": "CHECK_HTTP_SERVICE"
+    },
+    {
+      "scenario": "http-rate-limit",
+      "mode": "http-rate-limit",
+      "query": "browser",
+      "requestAttempted": true,
+      "requestUrl": "/api/search?mode=http-rate-limit&q=browser",
+      "transportError": null,
+      "httpStatus": 429,
+      "responseHeaders": {
+        "content-type": "application/json; charset=utf-8",
+        "retry-after": "3",
+        "x-search-challenge": null
+      },
+      "challengeMarker": false,
+      "staleState": false,
+      "semanticMismatch": false,
+      "resultCount": null,
+      "uiUpdated": true,
+      "networkRequestCount": 1,
+      "networkResponseCount": 1,
+      "networkRequests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:53383/api/search?mode=http-rate-limit&q=browser"
+        }
+      ],
+      "networkResponses": [
+        {
+          "status": 429,
+          "url": "http://127.0.0.1:53383/api/search?mode=http-rate-limit&q=browser",
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "retry-after": "3",
+            "x-search-challenge": null
+          }
+        }
+      ],
+      "requestFailures": [],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+      ],
+      "pageErrors": [],
+      "browser": {
+        "name": "chromium",
+        "version": "156.0.8078.4",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "locale": "en-US",
+        "timezoneId": "UTC"
+      },
+      "category": "F04",
+      "reason": "响应包含访问、会话或限流信号",
+      "nextAction": "CHECK_ACCESS_SESSION_POLICY"
+    },
+    {
+      "scenario": "access-challenge",
+      "mode": "access-challenge",
+      "query": "browser",
+      "requestAttempted": true,
+      "requestUrl": "/api/search?mode=access-challenge&q=browser",
+      "transportError": null,
+      "httpStatus": 200,
+      "responseHeaders": {
+        "content-type": "application/json; charset=utf-8",
+        "retry-after": null,
+        "x-search-challenge": "fixture-challenge"
+      },
+      "challengeMarker": true,
+      "staleState": false,
+      "semanticMismatch": false,
+      "resultCount": 0,
+      "uiUpdated": true,
+      "networkRequestCount": 1,
+      "networkResponseCount": 1,
+      "networkRequests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:53383/api/search?mode=access-challenge&q=browser"
+        }
+      ],
+      "networkResponses": [
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:53383/api/search?mode=access-challenge&q=browser",
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "retry-after": null,
+            "x-search-challenge": "fixture-challenge"
+          }
+        }
+      ],
+      "requestFailures": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "browser": {
+        "name": "chromium",
+        "version": "156.0.8078.4",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "locale": "en-US",
+        "timezoneId": "UTC"
+      },
+      "category": "F04",
+      "reason": "响应包含访问、会话或限流信号",
+      "nextAction": "CHECK_ACCESS_SESSION_POLICY"
+    },
+    {
+      "scenario": "render-crash",
+      "mode": "render-crash",
+      "query": "browser",
+      "requestAttempted": true,
+      "requestUrl": "/api/search?mode=render-crash&q=browser",
+      "transportError": null,
+      "httpStatus": 200,
+      "responseHeaders": {
+        "content-type": "application/json; charset=utf-8",
+        "retry-after": null,
+        "x-search-challenge": null
+      },
+      "challengeMarker": false,
+      "staleState": false,
+      "semanticMismatch": false,
+      "resultCount": 2,
+      "uiUpdated": false,
+      "networkRequestCount": 1,
+      "networkResponseCount": 1,
+      "networkRequests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:53383/api/search?mode=render-crash&q=browser"
+        }
+      ],
+      "networkResponses": [
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:53383/api/search?mode=render-crash&q=browser",
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "retry-after": null,
+            "x-search-challenge": null
+          }
+        }
+      ],
+      "requestFailures": [],
+      "consoleErrors": [
+        "fixture render failure after successful response"
+      ],
+      "pageErrors": [],
+      "browser": {
+        "name": "chromium",
+        "version": "156.0.8078.4",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "locale": "en-US",
+        "timezoneId": "UTC"
+      },
+      "category": "F05",
+      "reason": "响应后页面运行时异常导致结果区未完成更新",
+      "nextAction": "CHECK_RENDER_RUNTIME"
+    },
+    {
+      "scenario": "semantic-empty",
+      "mode": "semantic-empty",
+      "query": "browser",
+      "requestAttempted": true,
+      "requestUrl": "/api/search?mode=semantic-empty&q=browser",
+      "transportError": null,
+      "httpStatus": 200,
+      "responseHeaders": {
+        "content-type": "application/json; charset=utf-8",
+        "retry-after": null,
+        "x-search-challenge": null
+      },
+      "challengeMarker": false,
+      "staleState": false,
+      "semanticMismatch": true,
+      "resultCount": 0,
+      "uiUpdated": true,
+      "networkRequestCount": 1,
+      "networkResponseCount": 1,
+      "networkRequests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:53383/api/search?mode=semantic-empty&q=browser"
+        }
+      ],
+      "networkResponses": [
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:53383/api/search?mode=semantic-empty&q=browser",
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "retry-after": null,
+            "x-search-challenge": null
+          }
+        }
+      ],
+      "requestFailures": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "browser": {
+        "name": "chromium",
+        "version": "156.0.8078.4",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "locale": "en-US",
+        "timezoneId": "UTC"
+      },
+      "category": "F06",
+      "reason": "响应成功但内容不满足检索语义契约",
+      "nextAction": "CHECK_QUERY_AND_CONTENT_CONTRACT"
+    },
+    {
+      "scenario": "stale-state",
+      "mode": "stale-state",
+      "query": "browser",
+      "requestAttempted": true,
+      "requestUrl": "/api/search?mode=stale-state&q=browser",
+      "transportError": null,
+      "httpStatus": 200,
+      "responseHeaders": {
+        "content-type": "application/json; charset=utf-8",
+        "retry-after": null,
+        "x-search-challenge": null
+      },
+      "challengeMarker": false,
+      "staleState": true,
+      "semanticMismatch": false,
+      "resultCount": 1,
+      "uiUpdated": true,
+      "networkRequestCount": 1,
+      "networkResponseCount": 1,
+      "networkRequests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:53383/api/search?mode=stale-state&q=browser"
+        }
+      ],
+      "networkResponses": [
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:53383/api/search?mode=stale-state&q=browser",
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "retry-after": null,
+            "x-search-challenge": null
+          }
+        }
+      ],
+      "requestFailures": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "browser": {
+        "name": "chromium",
+        "version": "156.0.8078.4",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "locale": "en-US",
+        "timezoneId": "UTC"
+      },
+      "category": "F07",
+      "reason": "响应或页面明确表明结果来自旧状态",
+      "nextAction": "CHECK_CACHE_AND_STATE"
+    }
+  ]
+}
