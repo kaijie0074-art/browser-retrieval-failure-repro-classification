@@ -1,6 +1,6 @@
 # 浏览器检索失败的复现分类和定位：Wayfinder Map
 
-> 状态：执行中
+> 状态：已完成
 > 建立日期：2026-10-12
 > 仓库目标：`browser-retrieval-failure-repro-classification`
 
@@ -24,19 +24,26 @@
 ## Milestones
 
 1. **Evidence baseline**：锁定四个一手开源项目、许可证、可借鉴机制和边界；写入引用清单。
-2. **Taxonomy and reports**：建立八类失败分类、问题报告模板和四份示例问题报告。
+2. **Taxonomy and reports**：建立八类失败分类、问题报告模板和七份示例问题报告。
 3. **Executable reproductions**：实现本地检索夹具、Playwright 采集器、分类器和回归脚本。
-4. **Repair trail**：每份问题报告链接假想修复提交 ID、修复动作和验证命令；不冒充真实上游修复。
+4. **Repair trail**：每份问题报告链接模拟修复引用 ID、修复动作和验证命令；不冒充真实上游修复。
 5. **Regression and delivery**：本地跑通回归矩阵，检查文档链接和敏感信息，再创建并上传公开 GitHub 仓库。
 
 ## Acceptance gates
 
-- [ ] `npm install` 后可运行 `npm run reproduce`。
-- [ ] `npm test` 覆盖 happy path 与失败场景，逐场景断言主分类、证据字段和下一步动作。
-- [ ] 至少六种失败可由本地 fixture 确定性注入；每种均有报告和回归记录。
-- [ ] 参考项目事实均链接到官方仓库或官方文档；许可证表述不超过来源证据。
-- [ ] 仓库 README 能让零上下文读者完成安装、复现、回归和阅读路径。
-- [ ] 上传后的 GitHub 仓库内容与本地验收结果一致；无密钥、Cookie、真实检索数据和生成物噪声。
+- [x] `npm install` 后可运行 `npm run reproduce`。
+- [x] `npm test` 覆盖 happy path 与失败场景，逐场景断言主分类、证据字段和下一步动作。
+- [x] 至少六种失败可由本地 fixture 确定性注入；每种均有报告和回归记录。
+- [x] 参考项目事实均链接到官方仓库或官方文档；许可证表述不超过来源证据。
+- [x] 仓库 README 能让零上下文读者完成安装、复现、回归和阅读路径。
+- [x] 上传后的 GitHub 仓库内容与本地验收结果一致；无密钥、Cookie、真实检索数据和生成物噪声。
+
+## Evidence
+
+- 本地 `npm test`：9/9 场景通过，覆盖 `OK`、`F01`–`F07`。
+- 本地 `npm run check`：12 个核心文件、19 个 Markdown 文件、9 个场景通过。
+- trace 入口已实测：`node scripts/reproduce.mjs --scenario access-challenge --trace`，生成物随后清理。
+- GitHub `main` 已推送至提交 `c0ece3b`：https://github.com/kaijie0074-art/browser-retrieval-failure-repro-classification
 
 ## Not yet specified
 
