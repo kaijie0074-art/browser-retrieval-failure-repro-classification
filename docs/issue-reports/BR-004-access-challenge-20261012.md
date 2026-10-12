@@ -52,7 +52,7 @@
 
 ## 模拟修复引用
 
-- 修复 ID：`FIX-003`
+- 修复 ID：`FIX-004`
 - 代码位置：`fixtures/search-fixture-server.mjs` 的 `http-rate-limit`/`access-challenge` 分支；`scripts/classifier.mjs`
 - 修复动作：优先判断 401/403/429 和 challenge marker，再判断普通非 2xx。
 - 为什么不会把症状改成静默成功：保留响应头和 marker，并给出“检查会话/策略、不要盲目重试”的动作。

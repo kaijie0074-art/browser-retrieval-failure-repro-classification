@@ -29,7 +29,7 @@ for (const category of ['F01', 'F02', 'F03', 'F04', 'F05', 'F06', 'F07', 'F08'])
 }
 
 const repairReferences = await fs.readFile(path.join(root, 'docs/repair-references.md'), 'utf8');
-for (const fixId of ['FIX-001', 'FIX-002', 'FIX-003', 'FIX-004', 'FIX-005', 'FIX-006']) {
+for (const fixId of ['FIX-001', 'FIX-002', 'FIX-003', 'FIX-004', 'FIX-005', 'FIX-006', 'FIX-007']) {
   if (!repairReferences.includes(fixId)) throw new Error(`修复引用缺失：${fixId}`);
 }
 

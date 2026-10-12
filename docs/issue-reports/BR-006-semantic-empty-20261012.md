@@ -52,7 +52,7 @@
 
 ## 模拟修复引用
 
-- 修复 ID：`FIX-004`
+- 修复 ID：`FIX-006`
 - 代码位置：`fixtures/search-fixture-server.mjs` 的 `semantic-empty` 分支；`scripts/classifier.mjs`
 - 修复动作：只有存在明确语义不匹配证据时才归 F06，不把所有 `resultCount=0` 自动当作错误。
 - 为什么不会把症状改成静默成功：证据保留空数组和语义标记，并在 taxonomy 中说明真实零结果需要契约。

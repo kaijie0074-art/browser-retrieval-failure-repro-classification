@@ -50,7 +50,7 @@
 
 ## 模拟修复引用
 
-- 修复 ID：`FIX-006`
+- 修复 ID：`FIX-007`
 - 代码位置：`fixtures/search-fixture-server.mjs` 的 `stale-state` 分支；`scripts/reproduce.mjs` 的全新 context 设置。
 - 修复动作：把旧 requestId/stale marker 作为一等证据，并固定每个场景使用新 context。
 - 为什么不会把症状改成静默成功：页面明确展示 stale 状态，回归保留 `staleState=true`。
